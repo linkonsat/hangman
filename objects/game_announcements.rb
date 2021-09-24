@@ -11,4 +11,15 @@ module GameAnnouncements
   if you run out of guesses you lose!
   You will also have a chance to save the game each round. GL."
   end
+
+  def conclusion_wrong(word_guesses_length, word)
+    puts "the word was #{word}. You got #{word_guesses_length} right. Better luck next time!"
+  end
+
+  def conclusion_right(word)
+    puts "you won! the word was #{word}"
+  end
+  def info 
+    puts "go ahead and enter a single letter guess."
+  end
 end
