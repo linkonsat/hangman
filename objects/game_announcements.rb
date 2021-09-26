@@ -22,4 +22,14 @@ module GameAnnouncements
   def info 
     puts "go ahead and enter a single letter guess."
   end
+
+  def default_display(word)
+   
+    default = ["_"]
+    while default.length < word.length
+      default.push("_")
+    end
+  puts default.join('')
+  return default
+  end
 end

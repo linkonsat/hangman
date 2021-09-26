@@ -3,15 +3,28 @@ require_relative 'game'
 require_relative 'display'
 #handles the turn
 class Turn
- 
-  def new_display(word, guess, current_letters)
+ attr_accessor :word, :current_letters
+
+  def initialize(word, current_letters)
+    @word = word
+    @current_letters = current_letters
+  end
+  def player_display(word,current_letters)
     i = 0
-    while i < word.length
+    guess = gets.chomp
+    while i <= word.length 
         if (word[i] == guess)
             current_letters[i] = guess
-        else
-            current_letters[i] = "_"
         end
+        i+= 1
+      end
+     puts current_letters.join('')
+    end
+
+  def win(word,current_letters)
+    if (word.join('') == current_letters.join(''))
+        return true
     end
   end
+
 end
