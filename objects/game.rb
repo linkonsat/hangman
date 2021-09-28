@@ -44,7 +44,7 @@ class Game
 
   somefile = File.open("game_data", "w+") 
   data.each { |item| somefile.puts "#{item}"}  
-  binding.pry
+ 
   end
   def turn
    comparison_words = Turn.new(@word,default_display(@word))
@@ -52,12 +52,23 @@ class Game
     save([@word, @chances.chances,comparison_words.current_letters.join('')])
    comparison_words.player_display(comparison_words.word,comparison_words.current_letters)
    wrong_choice
-  end
+   end
   if (@word != comparison_words.current_letters)
     puts "You lost! The word was #{@word}"
   end
+  rerun
+  end
+  
+  def rerun 
+    puts "if you want to play again enter y else enter any other key"
+    if (gets.chomp == "y")
+      main_game
+    end
   end
 
-  def run_saved_game
+  def run_saved_game(data)
+    @word = data[0]
+    @chances = data[1]
+    comparison_words = Turn.new(@word,data[2])
   end
 end

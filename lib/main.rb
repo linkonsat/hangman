@@ -11,11 +11,16 @@ def game_start
 end
 
 def check_save_file
-    binding.pry
  if (File.exist?("game_data")) 
     puts 'found a saved game! To play the saved game enter y else to delte enter del'
- end
- if ()
+    answer = gets.chomp
+
+end
+ if (answer == "y")
+ 
+ elsif (answer == "del")
+    File.delete("game_data")
+end
 end
 
 check_save_file
