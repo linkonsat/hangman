@@ -22,7 +22,8 @@ class Turn
     end
 
   def win(word,current_letters)
-    if (word.join('') == current_letters.join(''))
+
+    if (word == current_letters.join(''))
         return true
     end
   end
