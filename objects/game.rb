@@ -105,7 +105,7 @@ class Game
         comparison_words.player_display(comparison_words.word,comparison_words.current_letters,guess)
         wrong_choice
         puts @chances
-        puts comparison_words.current_letters.join('')
+        puts comparison_words.current_letters
         if (@word != comparison_words.current_letters && @chances == 0)
           puts "You lost! The word was #{@word}"
       end

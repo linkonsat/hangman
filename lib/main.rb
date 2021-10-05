@@ -24,7 +24,11 @@ def check_save_file
   Game.new.saved_game(game_data)
  elsif (answer == "del")
     File.delete("game_data")
- elsif (answer == "game")
+ end
+ puts "if you would like to start a new game just enter game
+else enter any other key to quit"
+ answer = gets.chomp
+ if (answer == "game")
   game_start
  end
 
